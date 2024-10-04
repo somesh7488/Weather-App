@@ -23,7 +23,30 @@ async function checkWeather(city){
 
     humidity.innerHTML=`${weather_data.main.humidity}%`;
 
-    wind_speed.innerHTML=`${weather_data.wind.speed}Km/H`
+    wind_speed.innerHTML=`${weather_data.wind.speed}Km/H`;
+
+
+    switch(weather_data.weather[0].main){
+        case 'Clouds':
+            weather_img.src = "./Assets/cloud.png";
+            break;
+        case 'Clear':
+            weather_img.src = "./Assets/clear.png";
+            break;
+        case 'Rain':
+            weather_img.src = "./Assets/rain.png";
+            break;
+        case 'Mist':
+            weather_img.src = "./Assets/mist.png";
+            break;
+        case 'Snow':
+            weather_img.src = "./Assets/snow.png";
+            break;
+        case 'Thunderstorm':
+            weather_img.src = "./Assets/thunderstorm.jpg";
+            break;
+
+    }
     
 }
 
